@@ -1,0 +1,50 @@
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  background: url('http://orig07.deviantart.net/c5e8/f/2011/326/0/2/free_web_background_3_by_kgombocka-d4gz4lh.jpg');
+}
+
+#profilepic, #bigText {
+  display: inline;
+}
+
+.navbar li {
+  padding: 10px;
+  list-style-type: none;
+}
+
+.navbar {
+  color: white;
+}
+
+.lead {
+  text-align: center;
+}
+
+.selected{
+  text-decoration: underline;
+}
+
+.responsive-video{
+  text-align: center;
+  margin: 0 auto;
+}
+
+#footer {
+  height: 2em;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+#calctitle {
+  text-align: center;
+}
+
+.row {
+  text-align: center;
+}
+
+#contacttitle {
+  text-align: center;
+}
