@@ -1,12 +1,26 @@
 var App = {
-    calculate: function() {
+    getDates: function() {
         let firstDate = $("#first").val();
         let secondDate = $("#second").val();
         
+        var differenceInDaysRounded = App.calculateDifference(firstDate, secondDate);
+
+         if(isNaN(parseFloat(differenceInDaysRounded))) {
+            $("#days").html("Incorrect input format");
+            alert("We need you to enter your dates in the correct format given");
+            return;
+        }
+
+        // Put it back into html
+        $("#days").html("Number of days between dates: " + differenceInDaysRounded);
+
+    },
+    calculateDifference: function(firstDate, secondDate) {
+        console.log('hello');
         // Split the strings
         var splitFirst = firstDate.split("/");
         var splitSecond = secondDate.split("/");
-      
+
         // Now get the difference
         var dayInMil = 1000*60*60*24;
         firstDate = new Date(splitFirst[2], splitFirst[0], splitFirst[1]);
@@ -19,13 +33,6 @@ var App = {
         var differenceMs = Math.abs(d1Ms - d2Ms);
         var differenceInDaysRounded = Math.round(differenceMs/dayInMil);
 
-        if(isNaN(parseFloat(differenceInDaysRounded))) {
-            $("#days").html("Incorrect input format");
-            alert("We need you to enter your dates in the correct format given");
-            return;
-        }
-
-        // Put it back into html
-        $("#days").html("Number of days between dates: " + differenceInDaysRounded);
+        return differenceInDaysRounded;
     }
 };
